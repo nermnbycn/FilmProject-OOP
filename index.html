@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Film Ekleme Formu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2 class="heading-with-line">Film Bilgileri Ekle</h2>
+        <form id="film-form" name="form">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="filmName">Film Adı</label>
+                    <input type="text" id="filmName" name="filmName" autocomplete="off" >
+                </div>
+                <div class="form-group">
+                    <label for="directorName">Yönetmen</label>
+                    <input type="text" id="directorName" name="directorName" autocomplete="off">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="poster">Afiş Linki</label>
+                    <input type="url" id="poster" name="poster" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="score">Kendi Puanınız (1-10)</label>
+                    <input type="number" id="score" name="score" min="1" max="10" autocomplete="off">
+                </div>
+            </div>
+            <button type="submit" class="submit-btn">Film Ekle</button>
+        </form>
+    </div>
+
+    
+    <div class="film-list-container">
+        <div class="filtre">
+            <select>
+                <option>Filtre Seç</option>
+                <option value="A-Z (Film Adı)">A-Z (Film Adı)</option>
+                <option value="A-Z (Yönetmen Adı)">A-Z (Yönetmen Adı)</option>
+                <option value="Küçükten Büyüğe">Küçükten Büyüğe (Puan)</option>
+                <option value="Büyükten Küçüğe">Büyükten Küçüğe (Puan)</option>
+            </select>
+        </div>
+        <h2 class="heading-with-line">Film Listesi</h2>
+        <table class="film-table">
+            <thead>
+                <tr>
+                    <th>Afiş</th>
+                    <th>Film Adı</th>
+                    <th>Yönetmen</th>
+                    <th>Puan</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="films">
+                <!-- Filmler buraya eklenecek -->
+            </tbody>
+        </table>
+        <button id="clear-all-films">Tüm Filmleri Temizleyin</button>
+
+    </div>
+
+    <script src="ui.js"></script>
+    <script src="film.js"></script>
+    <script src="storage.js"></script>
+    <script src="project.js"></script>
+</body>
+</html>
+
+
